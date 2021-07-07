@@ -1,6 +1,6 @@
 {
   "name": "advana-side-nav",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "private": false,
   "babel": {
     "presets": [
@@ -29,8 +29,8 @@
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-syntax-class-properties": "^7.12.13",
     "@datapunt/matomo-tracker-react": "^0.4.0",
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
+    "@material-ui/core": "4.11.4",
+    "@material-ui/icons": "4.11.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
