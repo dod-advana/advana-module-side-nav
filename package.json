@@ -46,7 +46,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage --coverageDirectory=test/coverage --detectOpenHandles",
+    "test": "echo \"Info: no test specified\"",
     "publish:local": "npm publish --registry http://localhost:4873/",
     "publish:aws": "npm publish --registry http://10.194.9.122",
     "publish:prepare": "rm -rf dist && mkdir dist && npx babel src/lib -d dist --copy-files"
