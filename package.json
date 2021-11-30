@@ -1,6 +1,6 @@
 {
   "name": "@dod-advana/advana-side-nav",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "private": false,
   "babel": {
     "presets": [
@@ -39,8 +39,8 @@
     "underscore": "^1.13.1"
   },
   "peerDependencies": {
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.1 || ^17.0.0",
+    "react-dom": "^16.8.1 || ^17.0.0",
     "react-router-dom": "^5.2.0"
   },
   "scripts": {
