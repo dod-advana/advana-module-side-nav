@@ -1,6 +1,6 @@
 {
   "name": "@dod-advana/advana-side-nav",
-  "version": "0.0.17",
+  "version": "0.1.2",
   "private": false,
   "babel": {
     "presets": [
@@ -22,6 +22,24 @@
         {
           "loose": true
         }
+      ],
+      [
+        "babel-plugin-import",
+        {
+          "libraryName": "@material-ui/core",
+          "libraryDirectory": "esm",
+          "camel2DashComponentName": false
+        },
+        "core"
+      ],
+      [
+        "babel-plugin-import",
+        {
+          "libraryName": "@material-ui/icons",
+          "libraryDirectory": "esm",
+          "camel2DashComponentName": false
+        },
+        "icons"
       ]
     ]
   },
@@ -31,9 +49,7 @@
     "@datapunt/matomo-tracker-react": "0.5.1",
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
-    "@testing-library/jest-dom": "5.11.4",
-    "@testing-library/react": "12.0.0",
-    "@testing-library/user-event": "12.1.10",
+    "babel-plugin-import": "^1.13.5",
     "react-slidedown": "2.4.5",
     "styled-components": "5.3.3",
     "underscore": "1.13.1"
@@ -46,7 +62,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "echo \"Info: no test specified\"",
+    "test": "jest --coverage --coverageDirectory=test/coverage --detectOpenHandles",
     "publish:local": "npm publish --registry http://localhost:4873/",
     "publish:aws": "npm publish --registry http://10.194.9.122",
     "publish:prepare": "rm -rf dist && mkdir dist && npx babel src/lib -d dist --copy-files"
@@ -82,6 +98,7 @@
     "@babel/preset-react": "^7.13.13",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^12.1.10",
     "jest-sonar-reporter": "^2.0.0",
     "msw": "^0.30.0",
     "react": "^17.0.2",

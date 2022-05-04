@@ -80,7 +80,7 @@ export const ClosedMenu = styled.div`
 	height: 100%;
 	z-index: ${Z_INDEX + 1};
 
-	box-shadow: ${({ menuShadowColor }) => `10px 0px 50px -20px ${menuShadowColor}`}; 
+	box-shadow: ${({ menuShadowColor }) => `10px 0px 50px -20px ${menuShadowColor}`};
 
 	transform: translateX(0);
 	transition: transform 0.2s ease-in-out;
@@ -95,6 +95,7 @@ export const OpenCloseWrapper = styled.div`
 	flex-direction: column;
 	cursor: pointer;
 	width: 50px !important;
+	height: 99px !important;
 	background-color: ${({ openCloseButtonBackgroundColor }) => openCloseButtonBackgroundColor};
 	color: ${({ openCloseIconColor }) => openCloseIconColor};
 	font-size: 50px;
@@ -102,7 +103,7 @@ export const OpenCloseWrapper = styled.div`
 `;
 
 export const ToolAndCloseWrapper = styled.div`
-	height: 80px;
+	height: 100px;
 	display: flex;
 	width: 100%;
 	align-items: center;
@@ -456,12 +457,12 @@ export const ScrollableArea = styled.div`
 `
 
 const DEFAULT_SUPPORT_LINKS = [
-	{ label: 'Service Desk', icon: ServiceIcon, link: SERVICE_DESK_HREF },
-	{ label: 'Knowledge Base', icon: KnowledgeBaseIcon, link: WIKI_HREF },
+	{ label: 'Service Desk', icon: ServiceIcon, link: SERVICE_DESK_HREF, newTab: true },
+	{ label: 'Knowledge Base', icon: KnowledgeBaseIcon, link: WIKI_HREF, newTab: true },
 ];
 
 
-const Menu = ({ applicationsList }) => {
+const Menu = ({ applicationsList, className }) => {
 	const { trackEvent } = useMatomo();
 	const allApplications = applicationsList || [];
 	const sidebarContext = useContext(SlideOutToolContext);
@@ -514,7 +515,7 @@ const Menu = ({ applicationsList }) => {
 	}
 	const textLogoStyles = { fontFamily: 'Montserrat', textDecoration: "none", marginLeft: "15px", fontSize: logoFontSize || 32, lineHeight: 1, fontWeight: 'bolder', textTransform: 'uppercase' };
 	return (
-		<MenuWrapper menuBackgroundColor={menuBackgroundColor} fontColor={fontColor}>
+		<MenuWrapper menuBackgroundColor={menuBackgroundColor} fontColor={fontColor} className={className} >
 
 			<OpenedMenu
 				open={menuOpened}
@@ -532,6 +533,7 @@ const Menu = ({ applicationsList }) => {
 						openCloseButtonBackgroundColor={openCloseButtonBackgroundColor}
 						openCloseIconColor={openCloseIconColor}
 						onClick={handleToggle}
+						data-testid="close-button"
 					>
 						<KeyboardArrowLeft fontSize="inherit" />
 					</OpenCloseWrapper>

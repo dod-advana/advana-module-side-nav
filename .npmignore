@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -8,12 +6,10 @@
 # testing
 test/coverage
 test/reports
-/dist
 /.scannerwork
 
 # production
 /build
-/.idea
 
 # misc
 .DS_Store
@@ -21,9 +17,8 @@ test/reports
 .env.development.local
 .env.test.local
 .env.production.local
+/.idea
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-.npmrc
