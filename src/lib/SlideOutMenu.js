@@ -95,7 +95,7 @@ export const OpenCloseWrapper = styled.div`
 	flex-direction: column;
 	cursor: pointer;
 	width: 50px !important;
-	height: 99px !important;
+	height: 79px !important;
 	background-color: ${({ openCloseButtonBackgroundColor }) => openCloseButtonBackgroundColor};
 	color: ${({ openCloseIconColor }) => openCloseIconColor};
 	font-size: 50px;
@@ -103,7 +103,7 @@ export const OpenCloseWrapper = styled.div`
 `;
 
 export const ToolAndCloseWrapper = styled.div`
-	height: 100px;
+
 	display: flex;
 	width: 100%;
 	align-items: center;
