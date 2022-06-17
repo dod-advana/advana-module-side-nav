@@ -1,4 +1,5 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { getLinks } from './api';
 import styled, { css } from 'styled-components';
 import { KeyboardArrowLeft } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
@@ -464,7 +465,8 @@ const DEFAULT_SUPPORT_LINKS = [
 
 const Menu = ({ applicationsList, className }) => {
 	const { trackEvent } = useMatomo();
-	const allApplications = applicationsList || [];
+	const [ apiApplicationsList, setApiApplicationsList ] = useState([]);
+	const allApplications = applicationsList || apiApplicationsList;
 	const sidebarContext = useContext(SlideOutToolContext);
 	const cMenuRef = useRef(null);
 
@@ -514,6 +516,17 @@ const Menu = ({ applicationsList, className }) => {
 		toggleMenu();
 	}
 	const textLogoStyles = { fontFamily: 'Montserrat', textDecoration: "none", marginLeft: "15px", fontSize: logoFontSize || 32, lineHeight: 1, fontWeight: 'bolder', textTransform: 'uppercase' };
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const links = await getLinks();
+				setApiApplicationsList(links.Applications.links);
+			} catch (err) {
+				console.error(err);
+			}
+		})();
+	}, []);
 	return (
 		<MenuWrapper menuBackgroundColor={menuBackgroundColor} fontColor={fontColor} className={className} >
 

@@ -1,6 +1,6 @@
 {
   "name": "@dod-advana/advana-side-nav",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "babel": {
     "presets": [
@@ -49,7 +49,8 @@
     "@datapunt/matomo-tracker-react": "0.5.1",
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
-    "babel-plugin-import": "^1.13.5",
+    "axios": "0.24.0",
+    "babel-plugin-import": "1.13.5",
     "react-slidedown": "2.4.5",
     "styled-components": "5.3.3",
     "underscore": "1.13.1"
