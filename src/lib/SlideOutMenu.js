@@ -528,7 +528,7 @@ const Menu = ({ applicationsList, className }) => {
 		})();
 	}, []);
 	return (
-		<MenuWrapper menuBackgroundColor={menuBackgroundColor} fontColor={fontColor} className={className} >
+		<MenuWrapper menuBackgroundColor={menuBackgroundColor} fontColor={fontColor} className={className} data-cy={'side-nav'}>
 
 			<OpenedMenu
 				open={menuOpened}
@@ -547,6 +547,7 @@ const Menu = ({ applicationsList, className }) => {
 						openCloseIconColor={openCloseIconColor}
 						onClick={handleToggle}
 						data-testid="close-button"
+						data-cy="side-nav-close-button"
 					>
 						<KeyboardArrowLeft fontSize="inherit" />
 					</OpenCloseWrapper>
@@ -612,6 +613,7 @@ const Menu = ({ applicationsList, className }) => {
 						openCloseButtonBackgroundColor={openCloseButtonBackgroundColor}
 						openCloseIconColor={openCloseIconColor}
 						onClick={handleToggle}
+						data-cy="side-nav-open-button"
 					>
 						<AcronymSubheaderIcon src={MenuIcon} alt="menu icon" />
 					</OpenCloseWrapper>
