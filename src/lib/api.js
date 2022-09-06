@@ -18,5 +18,6 @@ export async function getLinks() {
 		return data?.links || {};
 	} catch (err) {
 		console.error(err);
+		return {};
 	}
 }

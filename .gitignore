@@ -12,6 +12,7 @@ test/reports
 /.scannerwork
 
 # production
+/dist
 /build
 /.idea
 
