@@ -80,9 +80,6 @@
     "publish:aws": "npm publish --registry http://10.194.9.122",
     "publish:prepare": "rm -rf dist && mkdir dist && npx babel src/lib -d dist --copy-files"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dod-advana/advana-module-side-nav.git"
