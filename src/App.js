@@ -1,27 +1,44 @@
-import './App.css';
-import React from 'react';
+import "./App.css";
+import React from "react";
 
-import { Route, HashRouter as Router } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  HashRouter as Router,
+  useLocation,
+  useNavigate,
+  useMatch,
+} from "react-router-dom";
 
-import SlideOutMenu from './lib/SlideOutMenu';
-import SlideOutMenuContextHandler from './lib/SlideOutMenuContext';
-
+import SlideOutMenu from "./lib/SlideOutMenu";
+import SlideOutMenuContextHandler from "./lib/SlideOutMenuContext";
 
 function App() {
-	return (
-		<div className="App">
-			<Router>
-				<SlideOutMenuContextHandler>
+  const match = useMatch({ path: "./" });
+  const location = useLocation();
+  const history = useNavigate();
 
-					<Route exact path='/' children={({ match, location, history }) => (
-						<SlideOutMenu match={match} location={location} history={history} />
-					)} />
-				</SlideOutMenuContextHandler>
-
-			</Router>
-
-		</div>
-	);
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
+          <SlideOutMenuContextHandler>
+            <Route
+              exact
+              path="/"
+              element={
+                <SlideOutMenu
+                  match={match}
+                  location={location}
+                  history={history}
+                />
+              }
+            />
+          </SlideOutMenuContextHandler>
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
